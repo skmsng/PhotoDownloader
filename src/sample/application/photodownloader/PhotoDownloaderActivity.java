@@ -101,9 +101,11 @@ public class PhotoDownloaderActivity extends Activity {
 	}
     
     //インナークラス
+    //AsyncTask（スレッドをAndroidに特化したようなもの）
     private class jsonTask extends AsyncTask<URL, Integer, String> {
 
     	//params配列の要素は１つだけ
+    	//可変長引数（URL...とURL[]の意味は同じ）...呼び出し時に引数が配列じゃなくていい
 		@Override
 		protected String doInBackground(URL... params) {
 			HttpURLConnection connection = null;
